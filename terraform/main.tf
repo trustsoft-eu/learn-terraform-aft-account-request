@@ -54,30 +54,30 @@ module "sandbox" {
 #  account_customizations_name = "sandbox"
 #}
 
-module "dev" {
-  source = "./modules/aft-account-request"
-
-  control_tower_parameters = {
-    AccountEmail              = "trustsoft-aft+dev@aws.trustsoft.org"
-    AccountName               = "trustsoft-aft-dev"
-    ManagedOrganizationalUnit = "Dev"
-    SSOUserEmail              = "trustsoft-aft+dev@aws.trustsoft.org"
-    SSOUserFirstName          = "trustsoft-aft"
-    SSOUserLastName           = "dev"
-  }
-
-  account_tags = {
-    "Learn Tutorial" = "AFT"
-  }
-
-  change_management_parameters = {
-    change_requested_by = "Stefan Matic"
-    change_reason       = "Add development account"
-  }
-
-  custom_fields = {
-    group = "non-prod"
-  }
-
-  account_customizations_name = "sandbox"
-}
+#module "dev" {
+#  source = "./modules/aft-account-request"
+#
+#  control_tower_parameters = {
+#    AccountEmail              = "trustsoft-aft+dev@aws.trustsoft.org"
+#    AccountName               = "trustsoft-aft-dev"
+#    ManagedOrganizationalUnit = "Dev"
+#    SSOUserEmail              = "trustsoft-aft+dev@aws.trustsoft.org"
+#    SSOUserFirstName          = "trustsoft-aft"
+#    SSOUserLastName           = "dev"
+#  }
+#
+#  account_tags = {
+#    "Learn Tutorial" = "AFT"
+#  }
+#
+#  change_management_parameters = {
+#    change_requested_by = "Stefan Matic"
+#    change_reason       = "Add development account"
+#  }
+#
+#  custom_fields = {
+#    group = "non-prod"
+#  }
+#
+#  account_customizations_name = "sandbox"
+#}
