@@ -51,6 +51,6 @@ module "prod" {
     group = "prod"
   }
 
-  # account_customizations_name = ""
+  account_customizations_name = "sandbox"
 }
 
