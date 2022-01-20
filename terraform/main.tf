@@ -2,12 +2,12 @@ module "sandbox" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
-    AccountEmail              = "<ACCOUNT EMAIL>"
-    AccountName               = "sandbox-aft"
-    ManagedOrganizationalUnit = "Learn AFT"
-    SSOUserEmail              = "<SSO EMAIL>"
-    SSOUserFirstName          = "Sandbox"
-    SSOUserLastName           = "AFT"
+    AccountEmail              = "trustsoft-aft+sandbox@aws.trustsoft.org"
+    AccountName               = "trustsoft-aft-sandbox"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "trustsoft-aft+sandbox@aws.trustsoft.org"
+    SSOUserFirstName          = "trustsoft-aft"
+    SSOUserLastName           = "sandbox"
   }
 
   account_tags = {
@@ -25,3 +25,32 @@ module "sandbox" {
 
   account_customizations_name = "sandbox"
 }
+
+module "prod" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "trustsoft-aft+prod@aws.trustsoft.org"
+    AccountName               = "trustsoft-aft-prod"
+    ManagedOrganizationalUnit = "Prod"
+    SSOUserEmail              = "trustsoft-aft+prod@aws.trustsoft.org"
+    SSOUserFirstName          = "trustsoft-aft"
+    SSOUserLastName           = "prod"
+  }
+
+  account_tags = {
+    "Learn Tutorial" = "AFT"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Stefan Matic"
+    change_reason       = "Testing account creation"
+  }
+
+  custom_fields = {
+    group = "prod"
+  }
+
+  # account_customizations_name = ""
+}
+
